@@ -80,10 +80,15 @@ Snippet above adds ```+``` and places it after in parentheses, indicating that t
 
 
 ### Bracket Expressions
-Bracket expressions allows the combination of mulitple character classes.
+Bracket expressions allows the combination of mulitple character classes.  
+a snippet from the regex above:  
+```([a-z0-9_\.-]+)```  
+As explained above, this allows the searching and matching of any letter, number, dashes, underscores, and periods.
 
 
 ### Greedy and Lazy Match
+A greedy match, ```{2,6}```, searches specifically between 2 and 6.
+Meanwhile, a lazy match, ```{2, }```, searches for any number 2 and higher.
 
 
 
