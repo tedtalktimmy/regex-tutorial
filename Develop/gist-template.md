@@ -1,10 +1,16 @@
-# Title (replace with your title)
+# regex tutorial
 
-Introductory paragraph (replace this with your text)
+This is a tutorial breaking down and explainings the specifics of a regular expression to understand what its use/purpose is.
 
 ## Summary
 
-Briefly summarize the regex you will be describing and what you will explain. Include a code snippet of the regex. Replace this text with your summary.
+
+A regular expression (regex) is a a sequence of characters that defines a search pattern.  The snippet below shows the particular regex I will be breaking down.
+
+```
+/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+```
+
 
 ## Table of Contents
 
@@ -21,10 +27,44 @@ Briefly summarize the regex you will be describing and what you will explain. In
 - [Look-ahead and Look-behind](#look-ahead-and-look-behind)
 
 ## Regex Components
+There are three elements in this regex:
+```
+/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+```
+
+
+  - ***element No.1 -*** USERNAME
+  ```
+  ([a-z0-9_\.-]+)
+  ```
+
+This checks the portion of email address to match username.  This cannot contain special characters. snippet below provides an example of the special characters not allowed. Please note: underscores and dashes do not fall in this criteria and can be used.
+
+  ```
+  %, &, ?, $, etc. etc.
+  ```
+
+  - ***element no.2 -*** DOMAIN
+  ```
+  ([\da-z\.-]+)
+  ```
+This checks the domain part of the email address to match. This can only contain letters, numbers and/or dashes.
+
+- ***element no.3 -*** SUFFIX
+```
+([a-z\.]{2,6})
+```
+This checks the suffix of the email address. ("gmail.com" and "outlook.com" are examples of a email suffix). The last digits, {2,6}, determines the shortest and longest a suffix can be.
+
+
 
 ### Anchors
+^ and $ are examples of anchors.  ^ defines the beginning of a string, while $ defines the end of a string (i.e ^qwerty$).
+
 
 ### Quantifiers
+Examples of quantifiers are as follows: ```+```  ,  ```{x,y}```
+
 
 ### OR Operator
 
