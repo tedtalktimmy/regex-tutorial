@@ -54,36 +54,40 @@ This checks the domain part of the email address to match. This can only contain
 ```
 ([a-z\.]{2,6})
 ```
-This checks the suffix of the email address. ("gmail.com" and "outlook.com" are examples of a email suffix). The last digits, {2,6}, determines the shortest and longest a suffix can be.
+This checks the suffix of the email address. ("gmail.com" and "outlook.com" are examples of a email suffix). The last digits, ```{2,6}```, determines the shortest and longest a suffix can be.
 
 
 
 ### Anchors
-^ and $ are examples of anchors.  ^ defines the beginning of a string, while $ defines the end of a string (i.e ^qwerty$).
+```^``` and ```$``` are examples of anchors.  ```^``` defines the beginning of a string, while ```$``` defines the end of a string (i.e ^qwerty$).
 
 
 ### Quantifiers
 Examples of quantifiers are as follows: ```+```  ,  ```{x,y}```
+* ```+``` - checks for characters that repeat at least one time.
+* ```{x,y}``` - determines a minimum and maximum number of characters. 
+In the regex above, ```{2,6}``` would search and return positive matches for items containing 2 - 6 characters.
 
-
-### OR Operator
 
 ### Character Classes
+```.``` is one of the metacharacters used most often. It matches any character, regardless of what it is, except for line break characters.
+When joined with ```\``` (```\.```), you can use it to create constraints.  The regex above ```([a-z0-9_\.-]+)`` is able to take in any letter/number between a-z/0-9.
 
-### Flags
 
 ### Grouping and Capturing
+```([a-z0-9_\.-]+)```
+Snippet above adds ```+``` and places it after in parentheses, indicating that this will match any letter between a - z, any number between 0 - 9, and allows dashes, underscores and periods.
+
 
 ### Bracket Expressions
+Bracket expressions allows the combination of mulitple character classes.
+
 
 ### Greedy and Lazy Match
 
-### Boundaries
 
-### Back-references
 
-### Look-ahead and Look-behind
 
 ## Author
-
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+Nate Fortunato  
+[![forthebadge](https://forthebadge.com/images/badges/oooo-kill-em.svg)](https://forthebadge.com)
